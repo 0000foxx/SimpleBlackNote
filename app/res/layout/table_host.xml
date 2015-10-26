@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <!-- Admob add here -->
+
+        <LinearLayout
+            android:id="@+id/AdLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </LinearLayout>
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <!-- framelayout put here will be buttom -->
+
+        <RadioGroup
+            android:id="@+id/tab_group"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/background1"
+            android:checkedButton="@+id/tab1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+<!-- 			button set null that will remove default radio button -->
+
+            <RadioButton
+                android:id="@id/tab1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="1.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/tab_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:tag="tab1"
+                android:text="消費清單" />
+
+            <RadioButton
+                android:id="@+id/tab2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="1.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/tab_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="本日消費" />
+
+            <RadioButton
+                android:id="@+id/tab3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="1.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/tab_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="本周消費" />
+
+            <RadioButton
+                android:id="@+id/tab4"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="1.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/tab_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="本月消費" />
+        </RadioGroup>
+
+        <!-- framelayout put here will be Top -->
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+        
+    </LinearLayout>
+
+</TabHost>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    >
+
+    <Button
+        android:id="@+id/buttonTime"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="37dp" 
+        android:clickable="false"
+        />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignBottom="@+id/buttonTime"
+        android:layout_marginBottom="17dp"
+        
+        android:layout_alignLeft="@+id/buttonTime"
+        android:layout_marginLeft="15dp"
+        android:text="日期 :"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/editTextTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonTime"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/textView1"
+
+        android:ems="10"
+        android:inputType="date" >
+       
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonMoney"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="97dp" 
+        android:clickable="false"
+        />
+    
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignBottom="@+id/buttonMoney"
+        android:layout_marginBottom="17dp"
+        
+        android:layout_alignLeft="@+id/buttonMoney"
+        android:layout_marginLeft="15dp"
+        android:text="金額 :"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/editTextMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonMoney"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/textView2"
+
+        android:ems="7"
+        android:inputType="numberSigned" >
+        <requestFocus />
+    </EditText>
+    
+    
+    <Button
+        android:id="@+id/buttonDetail"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="157dp" 
+        android:clickable="false"
+        />
+    
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignBottom="@+id/buttonDetail"
+        android:layout_marginBottom="35dp"
+        
+        android:layout_alignLeft="@+id/buttonDetail"
+        android:layout_marginLeft="15dp"
+        android:text="備註 :"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/editTextDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonDetail"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/textView3"
+        android:hint="輸入備註最多可以30個字,這是範例早餐花費三明治奶茶蛋餅100元" 
+        android:maxEms="10"
+        android:maxLength="30"
+        android:minLines="3"
+        android:maxLines="3"
+        >
+        
+    </EditText>
+    
+    
+    <Button
+        android:id="@+id/buttonok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="完成編輯" 
+        
+        />
+
+    <Button
+        android:id="@+id/buttoncancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="返回" />
+
+    <Button
+        android:id="@+id/buttondelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="刪除記錄" />
+    
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/buttonNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="182dp"
+        android:layout_marginLeft="220dp"
+        android:text="取消" />
+
+    <EditText
+        android:id="@+id/username_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonNo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:autoText="false"
+        android:capitalize="none"
+        android:ems="10"
+        android:gravity="fill_horizontal"
+        android:scrollHorizontally="true"
+        android:password="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/username_edit"
+        android:layout_alignLeft="@+id/username_edit"
+        android:text="解鎖提醒:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/buttonYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/username_edit"
+        android:layout_below="@+id/username_edit"
+        android:text="確定" />
+
+</RelativeLayout>
