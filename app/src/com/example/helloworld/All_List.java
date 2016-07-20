@@ -441,7 +441,7 @@ public class All_List extends Activity {
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
 								
-								nmShow();
+								showNotificationOnScreenTop();
 								
 								System.exit(0);
 								All_List.this.finish(); // exit program
@@ -1336,7 +1336,7 @@ public class All_List extends Activity {
 		
 	}
 	
-	void nmShow(){
+	void showNotificationOnScreenTop(){
 		
 		// get data for accountdetail
 		SharedPreferences sp = getSharedPreferences("bcn", 0);
@@ -1349,20 +1349,20 @@ public class All_List extends Activity {
 		it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pi = PendingIntent.getActivity(All_List.this, 0, it, 0);
 		
-		Notification nn = new Notification();
-		nn.icon = R.drawable.notpic;
-		nn.tickerText = "�w��ϥη�²�°O�b��!!!";
+		Notification notification = new Notification();
+		notification.icon = R.drawable.notpic;
+		notification.tickerText = "�w��ϥη�²�°O�b��!!!";
 		
 		if(tempi==1)
 		{
-			nn.defaults = Notification.DEFAULT_ALL;
+			notification.defaults = Notification.DEFAULT_ALL;
 		}
 		
 		
-		nn.setLatestEventInfo(All_List.this, "��²�°O�b��", "�w��ϥη�²�°O�b��!!!", pi);
+		notification.setLatestEventInfo(All_List.this, "��²�°O�b��", "�w��ϥη�²�°O�b��!!!", pi);
 
-		NotificationManager nm;
-		nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-		nm.notify(0, nn);
+		NotificationManager notificationManager;
+		notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+		notificationManager.notify(0, notification);
 	}
 }
