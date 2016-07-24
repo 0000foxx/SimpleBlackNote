@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.foxx.main;
 
 import FoXxLib.FP;
 import android.annotation.SuppressLint;
@@ -39,10 +39,10 @@ public class UnLock_Flow extends Activity{
 		
 		tv = (TextView)findViewById(R.id.textView1);
 		
-		tv.setText("½Ð¿é¤J±K½X¸ÑÂê");
+		tv.setText("ï¿½Ð¿ï¿½Jï¿½Kï¿½Xï¿½ï¿½ï¿½ï¿½");
 		
 		et = (EditText)findViewById(R.id.username_edit);
-		et.setHint("¿é¤J±K½X");
+		et.setHint("ï¿½ï¿½Jï¿½Kï¿½X");
 		
 		byes = (Button)findViewById(R.id.buttonYes);
 		byes.setOnClickListener(new OnClickListener() {
@@ -65,31 +65,31 @@ public class UnLock_Flow extends Activity{
 				
 				//use AlertDialog
 				AlertDialog ad = new AlertDialog.Builder(UnLock_Flow.this,AlertDialog.THEME_TRADITIONAL).create();
-		        ad.setTitle("Äµ§i!!");//³]©wÄµ§i¼ÐÃD
-		        ad.setMessage("½T©wÂ÷¶}µ{§Ç??");
+		        ad.setTitle("Äµï¿½i!!");//ï¿½]ï¿½wÄµï¿½iï¿½ï¿½ï¿½D
+		        ad.setMessage("ï¿½Tï¿½wï¿½ï¿½ï¿½}ï¿½{ï¿½ï¿½??");
 		        
-				ad.setButton2("½T©w", new DialogInterface.OnClickListener() {// ³]©w«ö¶s2
+				ad.setButton2("ï¿½Tï¿½w", new DialogInterface.OnClickListener() {// ï¿½]ï¿½wï¿½ï¿½ï¿½s2
 
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
 
-								// ÂI¿ï«ö¶s2«á°õ¦æªº°Ê§@
+								// ï¿½Iï¿½ï¿½ï¿½ï¿½s2ï¿½ï¿½ï¿½ï¿½æªºï¿½Ê§@
 								finishEdit(1);
 							}
 						});
-				ad.setButton("¨ú®ø", new DialogInterface.OnClickListener() {// ³]©w«ö¶s2
+				ad.setButton("ï¿½ï¿½ï¿½", new DialogInterface.OnClickListener() {// ï¿½]ï¿½wï¿½ï¿½ï¿½s2
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 
-						// ÂI¿ï«ö¶s2«á°õ¦æªº°Ê§@
+						// ï¿½Iï¿½ï¿½ï¿½ï¿½s2ï¿½ï¿½ï¿½ï¿½æªºï¿½Ê§@
 						
 					}
 				});
 				
-		        ad.setCanceledOnTouchOutside(true);//·íÄµ§i´£¥Ü¥X²{«á,ÂI¿ï´£¥Ü¥H¥~½d³ò,¬O§_·|¨ú®ø´£¥Ü,¹w³]¬Otrue
+		        ad.setCanceledOnTouchOutside(true);//ï¿½ï¿½Äµï¿½iï¿½ï¿½ï¿½Ü¥Xï¿½{ï¿½ï¿½,ï¿½Iï¿½ï´£ï¿½Ü¥Hï¿½~ï¿½dï¿½ï¿½,ï¿½Oï¿½_ï¿½|ï¿½ï¿½ï¿½ï¿½,ï¿½wï¿½]ï¿½Otrue
 		        
-		        ad.setCancelable(true);//·íÄµ§i´£¥Ü¥X²{«á,ÂI¿ï¨ä¥L¹êÅé«ö¶s(backkeyµ¥µ¥),¬O§_·|¨ú®ø´£¥Ü,¹w³]¬Otrue
+		        ad.setCancelable(true);//ï¿½ï¿½Äµï¿½iï¿½ï¿½ï¿½Ü¥Xï¿½{ï¿½ï¿½,ï¿½Iï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½s(backkeyï¿½ï¿½ï¿½ï¿½),ï¿½Oï¿½_ï¿½|ï¿½ï¿½ï¿½ï¿½,ï¿½wï¿½]ï¿½Otrue
 		        
 		        ad.show();
 				
@@ -104,7 +104,7 @@ public class UnLock_Flow extends Activity{
 		if(et.getText()==null){
 			// use Toast
 			tryNum--;
-	        Toast.makeText(UnLock_Flow.this, "¥¼¿é¤J±K½X!!!"+"ÁÙ³Ñ"+tryNum+"¦¸",Toast.LENGTH_SHORT).show();
+	        Toast.makeText(UnLock_Flow.this, "ï¿½ï¿½ï¿½ï¿½Jï¿½Kï¿½X!!!"+"ï¿½Ù³ï¿½"+tryNum+"ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 	        
 	        et.setText("");
 		}
@@ -119,11 +119,11 @@ public class UnLock_Flow extends Activity{
 			String passstr = sp.getString("adlock","");
 			
 			if(tempstr.equals(passstr)){
-				Toast.makeText(UnLock_Flow.this, "±K½X¥¿½T!!!",Toast.LENGTH_SHORT).show();
+				Toast.makeText(UnLock_Flow.this, "ï¿½Kï¿½Xï¿½ï¿½ï¿½T!!!",Toast.LENGTH_SHORT).show();
 				finishEdit(0);
 			}
 			else{
-				Toast.makeText(UnLock_Flow.this, "±K½X¿ù»~!!!"+"ÁÙ³Ñ"+tryNum+"¦¸",Toast.LENGTH_SHORT).show();
+				Toast.makeText(UnLock_Flow.this, "ï¿½Kï¿½Xï¿½ï¿½~!!!"+"ï¿½Ù³ï¿½"+tryNum+"ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 				tryNum--;
 			}
 			

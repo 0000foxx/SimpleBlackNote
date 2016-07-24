@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.foxx.main;
 
 import com.tlyerfoxx.sbcnote.R;
 import java.util.Comparator;

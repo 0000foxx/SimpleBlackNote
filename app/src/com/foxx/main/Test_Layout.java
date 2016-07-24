@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.foxx.main;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;

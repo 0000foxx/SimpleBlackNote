@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.foxx.main;
 
 import java.util.Calendar;
 
@@ -20,7 +20,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.tlyerfoxx.sbcnote.R;
 
-public class ADEdit_Flow extends Activity{
+public class ADEdit_Flow2 extends Activity{
 
 	EditText etTime;
 	EditText etMoney;
@@ -28,9 +28,21 @@ public class ADEdit_Flow extends Activity{
 	
 	Button Bok;
 	Button Bcancel;
+	Button Bdelete;
+	
+	int alnum;
+	String alTime;
+	String alMoney;
+	String alRemark;
 	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
+		
+		Bundle b = this.getIntent().getExtras();
+		alnum = b.getInt("alnum");
+		alTime = b.getString("altime");
+		alMoney = b.getString("almoney");
+		alRemark = b.getString("alremark");
 		
 		initXml();
 		initetTime();
@@ -40,7 +52,7 @@ public class ADEdit_Flow extends Activity{
 	
 	void initXml(){
 		
-		setContentView(R.layout.adedit);
+		setContentView(R.layout.adedit2);
 		
 		
 		Bok = (Button)findViewById(R.id.buttonok);
@@ -64,6 +76,17 @@ public class ADEdit_Flow extends Activity{
 				finishEdit(0);
 			}
 		});
+		
+		Bdelete = (Button)findViewById(R.id.buttondelete);
+		Bdelete.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				finishEdit(2);
+			}
+		});
 	}
 	
 	void initetTime() {
@@ -76,7 +99,7 @@ public class ADEdit_Flow extends Activity{
 				+ "/" + cal.get(Calendar.DATE);// 24
 												// ....
 		//now date set to etTime
-		etTime.setText(dateStr);
+		etTime.setText(alTime);
 		// set keyboard disappear
 		etTime.setInputType(InputType.TYPE_NULL);
 		// touch etTime will show datePickDialog
@@ -87,7 +110,7 @@ public class ADEdit_Flow extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-				new DatePickerDialog(ADEdit_Flow.this, new DatePickerDialog.OnDateSetListener()
+				new DatePickerDialog(ADEdit_Flow2.this, new DatePickerDialog.OnDateSetListener()
 				{
 					
 					@Override
@@ -105,7 +128,7 @@ public class ADEdit_Flow extends Activity{
 	void initetMoney(){
 		//get EditText
 		etMoney = (EditText) findViewById(R.id.editTextMoney);
-		etMoney.setText("100");
+		etMoney.setText(alMoney);
 		// add Listener for check input length < 8
 		etMoney.addTextChangedListener(new TextWatcher() {
 			
@@ -126,11 +149,11 @@ public class ADEdit_Flow extends Activity{
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
 				if(s.length()>7){
-					Toast.makeText(ADEdit_Flow.this, "³Ì¤j¿é¤J7¦ì¼Æ¦r,½Ð­«·s¿é¤J",Toast.LENGTH_SHORT).show();
+					Toast.makeText(ADEdit_Flow2.this, "ï¿½Ì¤jï¿½ï¿½J7ï¿½ï¿½Æ¦r,ï¿½Ð­ï¿½ï¿½sï¿½ï¿½J",Toast.LENGTH_SHORT).show();
 					s.clear();
 				}
 				else if(s.length()<=0){
-					Toast.makeText(ADEdit_Flow.this, "¥¼¶ñ¤J¼Æ¦r,½Ð­«·s¿é¤J",Toast.LENGTH_SHORT).show();
+					Toast.makeText(ADEdit_Flow2.this, "ï¿½ï¿½ï¿½ï¿½Jï¿½Æ¦r,ï¿½Ð­ï¿½ï¿½sï¿½ï¿½J",Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -138,7 +161,7 @@ public class ADEdit_Flow extends Activity{
 	
 	/**
 	 * 
-	 * @param result 0 cancel, 1 ok
+	 * @param result 0 cancel, 1 ok, 2 delete
 	 */
 	void finishEdit(int result){
 		
@@ -157,28 +180,46 @@ public class ADEdit_Flow extends Activity{
     	  etDetail.setText("");
       }
         
-		Bundle b = new Bundle();
-		b.putString("time", etTime.getText().toString());
-		b.putString("money", String.valueOf(tempi));
-		b.putString("remark", etDetail.getText().toString());
+
 		
-		inte.putExtras(b);
-		
+		//cancel
 		if(result==0){
-			ADEdit_Flow.this.setResult(0);
 			
-			ADEdit_Flow.this.finish();
+			ADEdit_Flow2.this.setResult(0);
+			
+			ADEdit_Flow2.this.finish();
 			
 			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+
 		}
-		else{
+		//edit old
+		else if(result==1){
 			
-			ADEdit_Flow.this.setResult(1, inte);
+			Bundle b = new Bundle();
+			b.putInt("alnum", alnum);
+			b.putString("time", etTime.getText().toString());
+			b.putString("money", String.valueOf(tempi));
+			b.putString("remark", etDetail.getText().toString());
 			
-			ADEdit_Flow.this.finish();
+			inte.putExtras(b);
+			
+			ADEdit_Flow2.this.setResult(1, inte);
+			
+			ADEdit_Flow2.this.finish();
 			
 			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 			
+		}
+		//delete
+		else if(result==2){
+			
+			Bundle b = new Bundle();
+			b.putInt("alnum", alnum);
+			inte.putExtras(b);
+			
+			ADEdit_Flow2.this.setResult(2, inte);
+			
+			ADEdit_Flow2.this.finish();
 		}
 	}
 	
@@ -186,7 +227,7 @@ public class ADEdit_Flow extends Activity{
 
 		// get EditText
 		etDetail = (EditText) findViewById(R.id.editTextDetail);
-		
+		etDetail.setText(alRemark);
 		// add Listener for check input length < 8
 		etDetail.addTextChangedListener(new TextWatcher() {
 
@@ -208,7 +249,7 @@ public class ADEdit_Flow extends Activity{
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
 				if (s.length() <= 0) {
-//					Toast.makeText(ADEdit_Flow.this, "¥¼¶ñ¤J³Æµù,½Ð­«·s¿é¤J",
+//					Toast.makeText(ADEdit_Flow.this, "ï¿½ï¿½ï¿½ï¿½Jï¿½Æµï¿½,ï¿½Ð­ï¿½ï¿½sï¿½ï¿½J",
 //							Toast.LENGTH_SHORT).show();
 				}
 			}

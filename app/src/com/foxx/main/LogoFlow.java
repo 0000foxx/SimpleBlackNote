@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.foxx.main;
 
 import java.util.Random;
 
@@ -267,7 +267,7 @@ public class LogoFlow extends Activity implements Runnable{
 				goAct.setClass(LogoFlow.this, Table_Flow.class); // set another activity CopyRightFlow.class
 				startActivity(goAct); // start another Activity
 				
-				overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);//使用過場,第1個參數是下1個場景的進入,第2個參數是本身場景的離開
+				overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);//嚙誕用過嚙踝蕭,嚙踝蕭1嚙諉參數是嚙磊1嚙諉喉蕭嚙踝蕭嚙踝蕭嚙箠嚙皚,嚙踝蕭2嚙諉參數是嚙踝蕭嚙踝蕭嚙踝蕭嚙踝蕭嚙踝蕭嚙踝蕭嚙罷
 				
 				System.exit(0);// stop program
 				
@@ -305,7 +305,7 @@ public class LogoFlow extends Activity implements Runnable{
 		goAct.setClass(LogoFlow.this, Table_Flow.class); // set another activity CopyRightFlow.class
 		startActivity(goAct); // start another Activity
 		
-		overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);//使用過場,第1個參數是下1個場景的進入,第2個參數是本身場景的離開
+		overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);//嚙誕用過嚙踝蕭,嚙踝蕭1嚙諉參數是嚙磊1嚙諉喉蕭嚙踝蕭嚙踝蕭嚙箠嚙皚,嚙踝蕭2嚙諉參數是嚙踝蕭嚙踝蕭嚙踝蕭嚙踝蕭嚙踝蕭嚙踝蕭嚙罷
 		
 		System.exit(0);// stop program
 		

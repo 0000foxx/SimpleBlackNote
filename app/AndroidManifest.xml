@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme" >
           
         <activity
-            android:name="com.example.helloworld.TestFlow"
+            android:name="com.foxx.main.TestFlow"
             android:label="@string/title_activity_main" 
 			android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen"
             android:screenOrientation="portrait">
@@ -23,7 +23,7 @@
         </activity>
         
         <activity
-            android:name="com.example.helloworld.LogoFlow"
+            android:name="com.foxx.main.LogoFlow"
             android:label="@string/title_activity_main" 
 			android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen"
             android:screenOrientation="portrait">
@@ -37,7 +37,7 @@
         </activity>
         
         <activity
-            android:name="com.example.helloworld.Table_Flow"
+            android:name="com.foxx.main.Table_Flow"
             android:label="@string/title_activity_main" 
 			android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
             android:screenOrientation="portrait">
@@ -47,43 +47,43 @@
         </activity>
         
         <activity
-            android:name="com.example.helloworld.Month_List"/>
+            android:name="com.foxx.main.Month_List"/>
         
         <activity
-            android:name="com.example.helloworld.Today_List"/>
+            android:name="com.foxx.main.Today_List"/>
         
         <activity
-            android:name="com.example.helloworld.Week_List"/>
+            android:name="com.foxx.main.Week_List"/>
         
         <activity
-            android:name="com.example.helloworld.All_List"/>
+            android:name="com.foxx.main.All_List"/>
         
         <activity
-            android:name="com.example.helloworld.UnLock_Flow"
+            android:name="com.foxx.main.UnLock_Flow"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
             android:screenOrientation="portrait"
             />
         
         <activity
-            android:name="com.example.helloworld.Lock_Flow"
+            android:name="com.foxx.main.Lock_Flow"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
             android:screenOrientation="portrait"
             />
         
        <activity 
-           android:name="com.example.helloworld.ADEdit_Flow"
+           android:name="com.foxx.main.ADEdit_Flow"
            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
            android:screenOrientation="portrait"
            />
         
        <activity 
-           android:name="com.example.helloworld.ADEdit_Flow2"
+           android:name="com.foxx.main.ADEdit_Flow2"
            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
            android:screenOrientation="portrait"
            />
        
         <activity
-            android:name="com.example.helloworld.CopyRightFlow"
+            android:name="com.foxx.main.CopyRightFlow"
             android:label="@string/title_activity_main" 
 			android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen"
             android:screenOrientation="portrait">
@@ -96,7 +96,7 @@
        
         
         <activity
-            android:name="com.example.helloworld.GetDisplaySize"
+            android:name="com.foxx.main.GetDisplaySize"
             android:label="@string/title_activity_main2" 
             android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen"
             android:screenOrientation="portrait">
@@ -108,7 +108,7 @@
         </activity>
         
         <activity
-            android:name="com.example.helloworld.Test_Layout"
+            android:name="com.foxx.main.Test_Layout"
             android:label="@string/title_activity_main" >
             
         </activity>

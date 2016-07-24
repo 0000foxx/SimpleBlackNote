@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.foxx.main;
 
 import FoXxLib.FP;
 import android.app.Activity;
@@ -50,9 +50,9 @@ public class GetDisplaySize extends Activity {
 		Intent inte = this.getIntent();
 		
 		Bundle b = new Bundle();
-		b.putString("time", "³o¬O´ú¸Õ®É¶¡");
-		b.putString("money", "³o¬O´ú¸Õª÷¿ú");
-		b.putString("remark", "³o¬O´ú¸Õ³Æµù");
+		b.putString("time", "ï¿½oï¿½Oï¿½ï¿½Õ®É¶ï¿½");
+		b.putString("money", "ï¿½oï¿½Oï¿½ï¿½Õªï¿½ï¿½ï¿½");
+		b.putString("remark", "ï¿½oï¿½Oï¿½ï¿½Õ³Æµï¿½");
 		
 		inte.putExtras(b);
 		

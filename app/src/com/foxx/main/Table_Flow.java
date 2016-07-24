@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.foxx.main;
 
 import FoXxLib.FP;
 import android.app.TabActivity;
@@ -54,10 +54,10 @@ public class Table_Flow extends TabActivity{
 		rb3 = (RadioButton)findViewById(R.id.tab3);
 		rb4 = (RadioButton)findViewById(R.id.tab4);
 		
-		Intent inte1 = new Intent(this, All_List.class);//²M³æ
-		Intent inte2 = new Intent(this, Month_List.class);//¥»¤ë
-		Intent inte3 = new Intent(this, Today_List.class);//¥»¤é
-		Intent inte4 = new Intent(this, Week_List.class);//¥»©P
+		Intent inte1 = new Intent(this, All_List.class);//ï¿½Mï¿½ï¿½
+		Intent inte2 = new Intent(this, Month_List.class);//ï¿½ï¿½ï¿½ï¿½
+		Intent inte3 = new Intent(this, Today_List.class);//ï¿½ï¿½ï¿½ï¿½
+		Intent inte4 = new Intent(this, Week_List.class);//ï¿½ï¿½ï¿½P
 		
 		thost.addTab(thost.newTabSpec("TAB1").setIndicator("tab1").setContent(inte1));
 		thost.addTab(thost.newTabSpec("TAB4").setIndicator("tab4").setContent(inte2));
@@ -141,25 +141,25 @@ public class Table_Flow extends TabActivity{
 				
 				switch(id){
 				
-				case R.id.tab1://²M³æ
+				case R.id.tab1://ï¿½Mï¿½ï¿½
 					FP.p("in tab1");
 					thost.setCurrentTabByTag("TAB1");					
 					rb1.startAnimation(scalybig);					
 					break;
 					
-				case R.id.tab2://¥»¤é
+				case R.id.tab2://ï¿½ï¿½ï¿½ï¿½
 					FP.p("in tab2");
 					thost.setCurrentTabByTag("TAB2");		
 					rb2.startAnimation(scalybig);					
 					break;
 					
-				case R.id.tab3://¥»©P
+				case R.id.tab3://ï¿½ï¿½ï¿½P
 					FP.p("in tab3");
 					thost.setCurrentTabByTag("TAB3");				
 					rb3.startAnimation(scalybig);					
 					break;
 					
-				case R.id.tab4://¥»¤ë
+				case R.id.tab4://ï¿½ï¿½ï¿½ï¿½
 					FP.p("in tab4");
 					thost.setCurrentTabByTag("TAB4");					
 					rb4.startAnimation(scalybig);

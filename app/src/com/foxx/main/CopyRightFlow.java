@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.foxx.main;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -123,24 +123,24 @@ public class CopyRightFlow extends Activity{
 
 		AlertDialog ad = new AlertDialog.Builder(this).create();
 		
-		ad.setTitle("Äµ§i");//³]©wÄµ§i¼ÐÃD
-		ad.setMessage("½T©wÂ÷¶}??");//³]©wÄµ§i¤º®e
-		ad.setButton("½T©w", new DialogInterface.OnClickListener() {//³]©w«ö¶s1
+		ad.setTitle("Äµï¿½i");//ï¿½]ï¿½wÄµï¿½iï¿½ï¿½ï¿½D
+		ad.setMessage("ï¿½Tï¿½wï¿½ï¿½ï¿½}??");//ï¿½]ï¿½wÄµï¿½iï¿½ï¿½ï¿½e
+		ad.setButton("ï¿½Tï¿½w", new DialogInterface.OnClickListener() {//ï¿½]ï¿½wï¿½ï¿½ï¿½s1
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				
-				//ÂI¿ï«ö¶s1«á°õ¦æªº°Ê§@
-				//ÀË¬dºô¸ôª¬ºA
+				//ï¿½Iï¿½ï¿½ï¿½ï¿½s1ï¿½ï¿½ï¿½ï¿½æªºï¿½Ê§@
+				//ï¿½Ë¬dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A
 				ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
 				NetworkInfo ni = cm.getActiveNetworkInfo();
-				if (ni == null) {//¨S¦³ºô¸ô
+				if (ni == null) {//ï¿½Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-//					CopyRightFlow.this.finish();//µ²§ôµ{¦¡
+//					CopyRightFlow.this.finish();//ï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½ï¿½
 					System.exit(0);
 				}
-				else if (ni != null) {//­Y¦³ºô¸ô¥ý³sµ²¨ì¥~³¡ºô­¶
+				else if (ni != null) {//ï¿½Yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 					if( ni.isConnected()){
 						
@@ -149,27 +149,27 @@ public class CopyRightFlow extends Activity{
 					Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 					startActivity(intent);
 
-//					CopyRightFlow.this.finish();//¦Aµ²§ôµ{§Ç
+//					CopyRightFlow.this.finish();//ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½ï¿½
 					System.exit(0);
 					}
 				}
 			}
 		});
-		ad.setButton2("¨ú®ø", new DialogInterface.OnClickListener() {//³]©w«ö¶s2
+		ad.setButton2("ï¿½ï¿½ï¿½", new DialogInterface.OnClickListener() {//ï¿½]ï¿½wï¿½ï¿½ï¿½s2
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				
-				//ÂI¿ï«ö¶s2«á°õ¦æªº°Ê§@
-				//µL°Ê§@
+				//ï¿½Iï¿½ï¿½ï¿½ï¿½s2ï¿½ï¿½ï¿½ï¿½æªºï¿½Ê§@
+				//ï¿½Lï¿½Ê§@
 			}
 		});
 		
-		ad.setCanceledOnTouchOutside(false);//·íÄµ§i´£¥Ü¥X²{«á,ÂI¿ï´£¥Ü¥H¥~½d³ò,¬O§_·|¨ú®ø´£¥Ü,¹w³]¬Otrue
+		ad.setCanceledOnTouchOutside(false);//ï¿½ï¿½Äµï¿½iï¿½ï¿½ï¿½Ü¥Xï¿½{ï¿½ï¿½,ï¿½Iï¿½ï´£ï¿½Ü¥Hï¿½~ï¿½dï¿½ï¿½,ï¿½Oï¿½_ï¿½|ï¿½ï¿½ï¿½ï¿½,ï¿½wï¿½]ï¿½Otrue
 		
-		ad.setCancelable(false);//·íÄµ§i´£¥Ü¥X²{«á,ÂI¿ï¨ä¥L¹êÅé«ö¶s(backkeyµ¥µ¥),¬O§_·|¨ú®ø´£¥Ü,¹w³]¬Otrue
+		ad.setCancelable(false);//ï¿½ï¿½Äµï¿½iï¿½ï¿½ï¿½Ü¥Xï¿½{ï¿½ï¿½,ï¿½Iï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½s(backkeyï¿½ï¿½ï¿½ï¿½),ï¿½Oï¿½_ï¿½|ï¿½ï¿½ï¿½ï¿½,ï¿½wï¿½]ï¿½Otrue
 		
-		ad.show();//Åã¥Ü«ö¶s
+		ad.show();//ï¿½ï¿½Ü«ï¿½ï¿½s
 	}
 	
 	void addAdmob() {

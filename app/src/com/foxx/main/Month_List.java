@@ -1,7 +1,9 @@
-package com.example.helloworld;
+package com.foxx.main;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,9 +40,10 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 import com.tlyerfoxx.sbcnote.R;
 
-@TargetApi(11)
-public class Today_List extends Activity{
 
+@TargetApi(11)
+public class Month_List extends Activity{
+	
 	Button bexit; // exit button
 	Button benter; // exit button
 	
@@ -58,9 +61,9 @@ public class Today_List extends Activity{
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		
-		FP.p("in today_list onCreate start");
+		FP.p("in month_list onCreate start");
 		
-		setContentView(R.layout.todaylist);
+		setContentView(R.layout.monthlist);
 		
 		initXml();
 		
@@ -70,7 +73,7 @@ public class Today_List extends Activity{
 		
 		callNowalcount();
 		
-		FP.p("in today_list onCreate end");
+		FP.p("in month_list onCreate end");
 	}
 	
 	//switch tabwidget will call this
@@ -95,12 +98,6 @@ public class Today_List extends Activity{
 		
 		callNowalcount();
 	}
-	
-//	public void onRestart(){
-//		super.onRestart();
-//		FP.p("on onRestart");
-//		
-//	}
 	
 	@SuppressLint("NewApi")
 	void initXml(){
@@ -140,25 +137,25 @@ public class Today_List extends Activity{
 						// TODO Auto-generated method stub
 						
 //						// exit AlertDialog
-						AlertDialog ad = new AlertDialog.Builder(Today_List.this,AlertDialog.THEME_TRADITIONAL).create();
-						ad.setTitle("Äµ§i");//³]©wÄµ§i¼ÐÃD
-						ad.setMessage("½T©wÂ÷¶}??");//³]©wÄµ§i¤º®e
-						ad.setButton("½T©w", new DialogInterface.OnClickListener() {//³]©w«ö¶s1
+						AlertDialog ad = new AlertDialog.Builder(Month_List.this,AlertDialog.THEME_TRADITIONAL).create();
+						ad.setTitle("Äµï¿½i");//ï¿½]ï¿½wÄµï¿½iï¿½ï¿½ï¿½D
+						ad.setMessage("ï¿½Tï¿½wï¿½ï¿½ï¿½}??");//ï¿½]ï¿½wÄµï¿½iï¿½ï¿½ï¿½e
+						ad.setButton("ï¿½Tï¿½w", new DialogInterface.OnClickListener() {//ï¿½]ï¿½wï¿½ï¿½ï¿½s1
 							
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
 								
-								//ÂI¿ï«ö¶s1«á°õ¦æªº°Ê§@
-								//ÀË¬dºô¸ôª¬ºA
+								//ï¿½Iï¿½ï¿½ï¿½ï¿½s1ï¿½ï¿½ï¿½ï¿½æªºï¿½Ê§@
+								//ï¿½Ë¬dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A
 								ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
 								NetworkInfo ni = cm.getActiveNetworkInfo();
-								if (ni == null) {//¨S¦³ºô¸ô
+								if (ni == null) {//ï¿½Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-//									CopyRightFlow.this.finish();//µ²§ôµ{¦¡
+//									CopyRightFlow.this.finish();//ï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½ï¿½
 									System.exit(0);
 								}
-								else if (ni != null) {//­Y¦³ºô¸ô¥ý³sµ²¨ì¥~³¡ºô­¶
+								else if (ni != null) {//ï¿½Yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 									if( ni.isConnected()){
 										
@@ -167,21 +164,21 @@ public class Today_List extends Activity{
 									Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 									startActivity(intent);
 
-//									CopyRightFlow.this.finish();//¦Aµ²§ôµ{§Ç
+//									CopyRightFlow.this.finish();//ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½ï¿½
 									System.exit(0);
 									}
 								}
 								
-								Today_List.this.finish(); // exit program
+								Month_List.this.finish(); // exit program
 								
 							}
 						});
-						ad.setButton2("¨ú®ø", new DialogInterface.OnClickListener() {//³]©w«ö¶s2
+						ad.setButton2("ï¿½ï¿½ï¿½", new DialogInterface.OnClickListener() {//ï¿½]ï¿½wï¿½ï¿½ï¿½s2
 							
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
 								
-								//ÂI¿ï«ö¶s2«á°õ¦æªº°Ê§@
+								//ï¿½Iï¿½ï¿½ï¿½ï¿½s2ï¿½ï¿½ï¿½ï¿½æªºï¿½Ê§@
 								ValueAnimator rotationY = ObjectAnimator.ofFloat(bexit, "scaleY", 0.0f, 1.0f);
 //								ValueAnimator rotationX = ObjectAnimator.ofFloat(bexit, "rotationX", 0f, 360f);
 								rotationY.setDuration(250);		        
@@ -246,12 +243,12 @@ public class Today_List extends Activity{
 								
 								
 								
-								// ©I¥sAll_List ªº ¼W¥[®ø¶O¶µ¥Ø								
+								// ï¿½Iï¿½sAll_List ï¿½ï¿½ ï¿½Wï¿½[ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½								
 								Intent inte = new Intent();
-								inte.setClass(Today_List.this, Table_Flow.class);
+								inte.setClass(Month_List.this, Table_Flow.class);
 								
 								startActivity(inte);
-								Today_List.this.finish();
+								Month_List.this.finish();
 								overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 								
 							}
@@ -309,7 +306,7 @@ public class Today_List extends Activity{
 		Calendar cal = Calendar.getInstance();
 		String dateStr = ""+cal.get(Calendar.YEAR) //2012
 		+"/"+(cal.get(Calendar.MONTH)+1) //11 (add 1 because it start from 0)
-		+"/"+cal.get(Calendar.DATE);//13
+		;// -> 2012/11
 		
 		
 		// get accountdetail field
@@ -319,9 +316,10 @@ public class Today_List extends Activity{
 			sp.getString("ad_money"+i, ""); // ad_money0 = accountdetail0's money
 			sp.getString("ad_remark"+i, "");// ad_detail0 = accountdetail0's detail
 			
-			if(tempstr.equals(dateStr)){
+			if(tempstr.contains(dateStr)){
 				
 				al.add(new AccountDetail(sp.getString("ad_time"+i, ""),sp.getString("ad_money"+i, ""),sp.getString("ad_remark"+i, "")));
+				
 			}
 			
 			
@@ -433,31 +431,47 @@ public class Today_List extends Activity{
 //		
 //		//use AlertDialog
 //		AlertDialog ad = new AlertDialog.Builder(Table_widget4.this,AlertDialog.THEME_TRADITIONAL).create();
-//        ad.setTitle("®ø¶O²M³æ´£¿ô!!");//³]©wÄµ§i¼ÐÃD
-//        ad.setMessage("©Ò¦³®ø¶O¤ä¥X¬° "+getalmoney()+" ¤¸\n" +
-//				"®ø¶O¶µ¥ØÁ`¼Æ¬° "+getalcount()+" µ§");
+//        ad.setTitle("ï¿½ï¿½Oï¿½Mï¿½æ´£ï¿½ï¿½!!");//ï¿½]ï¿½wÄµï¿½iï¿½ï¿½ï¿½D
+//        ad.setMessage("ï¿½Ò¦ï¿½ï¿½ï¿½Oï¿½ï¿½Xï¿½ï¿½ "+getalmoney()+" ï¿½ï¿½\n" +
+//				"ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Æ¬ï¿½ "+getalcount()+" ï¿½ï¿½");
 //        
-//		ad.setButton2("ÂIÀ»Ãö³¬´£¿ô", new DialogInterface.OnClickListener() {// ³]©w«ö¶s2
+//		ad.setButton2("ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", new DialogInterface.OnClickListener() {// ï¿½]ï¿½wï¿½ï¿½ï¿½s2
 //
 //					@Override
 //					public void onClick(DialogInterface dialog, int which) {
 //
-//						// ÂI¿ï«ö¶s2«á°õ¦æªº°Ê§@
+//						// ï¿½Iï¿½ï¿½ï¿½ï¿½s2ï¿½ï¿½ï¿½ï¿½æªºï¿½Ê§@
 //						
 //					}
 //				});
 //        
-//        ad.setCanceledOnTouchOutside(true);//·íÄµ§i´£¥Ü¥X²{«á,ÂI¿ï´£¥Ü¥H¥~½d³ò,¬O§_·|¨ú®ø´£¥Ü,¹w³]¬Otrue
+//        ad.setCanceledOnTouchOutside(true);//ï¿½ï¿½Äµï¿½iï¿½ï¿½ï¿½Ü¥Xï¿½{ï¿½ï¿½,ï¿½Iï¿½ï´£ï¿½Ü¥Hï¿½~ï¿½dï¿½ï¿½,ï¿½Oï¿½_ï¿½|ï¿½ï¿½ï¿½ï¿½,ï¿½wï¿½]ï¿½Otrue
 //        
-//        ad.setCancelable(true);//·íÄµ§i´£¥Ü¥X²{«á,ÂI¿ï¨ä¥L¹êÅé«ö¶s(backkeyµ¥µ¥),¬O§_·|¨ú®ø´£¥Ü,¹w³]¬Otrue
+//        ad.setCancelable(true);//ï¿½ï¿½Äµï¿½iï¿½ï¿½ï¿½Ü¥Xï¿½{ï¿½ï¿½,ï¿½Iï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½s(backkeyï¿½ï¿½ï¿½ï¿½),ï¿½Oï¿½_ï¿½|ï¿½ï¿½ï¿½ï¿½,ï¿½wï¿½]ï¿½Otrue
 //        
 //        ad.show();
         
 		// use Toast
-        Toast.makeText(Today_List.this, "¥»¤é©Ò¦³®ø¶O¤ä¥X¬° "+getalmoney()+" ¤¸\n" +
-				"¥»¤é®ø¶O¶µ¥ØÁ`¼Æ¬° "+getalcount()+" µ§",Toast.LENGTH_SHORT).show();
+        Toast.makeText(Month_List.this, "ï¿½ï¿½ï¿½ï¿½Ò¦ï¿½ï¿½ï¿½Oï¿½ï¿½Xï¿½ï¿½ "+getalmoney()+" ï¿½ï¿½\n" +
+				"ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Æ¬ï¿½ "+getalcount()+" ï¿½ï¿½",Toast.LENGTH_SHORT).show();
         
         
+	}
+	
+	public static Date getFirstDayOfWeek(Date date) {
+		Calendar c = new GregorianCalendar();
+		c.setFirstDayOfWeek(Calendar.MONDAY);
+		c.setTime(date);
+		c.set(Calendar.DAY_OF_WEEK, c.getFirstDayOfWeek()); // Monday
+		return c.getTime ();
+	}
+	
+	public static Date getLastDayOfWeek(Date date) {
+		Calendar c = new GregorianCalendar();
+		c.setFirstDayOfWeek(Calendar.MONDAY);
+		c.setTime(date);
+		c.set(Calendar.DAY_OF_WEEK, c.getFirstDayOfWeek() + 6); // Sunday
+		return c.getTime();
 	}
 	
 	void listShowAnim(){

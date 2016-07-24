@@ -1,8 +1,9 @@
 package TouchDetect;
 
-import com.example.helloworld.CopyRightFlow;
+import com.foxx.main.CopyRightFlow;
 import com.tlyerfoxx.sbcnote.R;
 //import com.example.helloworld.R.string;
+
 
 import android.app.Activity;
 import android.content.Context;
