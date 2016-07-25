@@ -1,6 +1,5 @@
 package com.foxx.main;
 
-import FoXxLib.FP;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +14,7 @@ import android.widget.TabHost;
 import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
+import com.simpleblacklight.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 @SuppressWarnings("deprecation")
@@ -142,25 +142,25 @@ public class Table_Flow extends TabActivity{
 				switch(id){
 				
 				case R.id.tab1://�M��
-					FP.p("in tab1");
+					TraceLogger.print("in tab1");
 					thost.setCurrentTabByTag("TAB1");					
 					rb1.startAnimation(scalybig);					
 					break;
 					
 				case R.id.tab2://����
-					FP.p("in tab2");
+					TraceLogger.print("in tab2");
 					thost.setCurrentTabByTag("TAB2");		
 					rb2.startAnimation(scalybig);					
 					break;
 					
 				case R.id.tab3://���P
-					FP.p("in tab3");
+					TraceLogger.print("in tab3");
 					thost.setCurrentTabByTag("TAB3");				
 					rb3.startAnimation(scalybig);					
 					break;
 					
 				case R.id.tab4://����
-					FP.p("in tab4");
+					TraceLogger.print("in tab4");
 					thost.setCurrentTabByTag("TAB4");					
 					rb4.startAnimation(scalybig);
 

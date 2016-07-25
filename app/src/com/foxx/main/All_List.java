@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import FoXxLib.FP;
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.AnimatorSet;
@@ -46,6 +45,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import com.simpleblacklight.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 
@@ -97,7 +98,7 @@ public class All_List extends Activity {
 		
 		lock();
 		
-		FP.p("in all_list onCreate");
+		TraceLogger.print("in all_list onCreate");
 		
 		setContentView(R.layout.alllist);
 		
@@ -111,7 +112,7 @@ public class All_List extends Activity {
 		
 		for(int i=0; i<al.size(); i++)
 		{
-			FP.p(""+al.get(i));
+			TraceLogger.print(""+al.get(i));
 		}
 	}
 	
@@ -155,7 +156,7 @@ public class All_List extends Activity {
 		// get accountdetail count
 		accountdetailcount = sp.getInt("adcount", 0);
 		
-		FP.p("in all: "+accountdetailcount);
+		TraceLogger.print("in all: "+accountdetailcount);
 		
 		// get accountdetail field
 		for(int i=0; i<accountdetailcount; i++){
@@ -181,7 +182,7 @@ public class All_List extends Activity {
 			map.put("str2",al.get(i).money);
 			map.put("str3",al.get(i).remark);
 
-			FP.p("" + i);
+			TraceLogger.print("" + i);
 
 			list.add(map);
 			
@@ -203,7 +204,7 @@ public class All_List extends Activity {
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				// TODO Auto-generated method stub
-				FP.p("long "+arg2);
+				TraceLogger.print("long "+arg2);
 				
 				callFirstEditmenu(arg2);
 				
@@ -218,7 +219,7 @@ public class All_List extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				FP.p(""+arg2);
+				TraceLogger.print(""+arg2);
 				
 				//�I�s�s�誺 activity (ADEdit_Flow2)
 				Bundle b = new Bundle();
@@ -589,12 +590,12 @@ public class All_List extends Activity {
 			//no edit
 			case 0:
 				
-				FP.p("cancel");
+				TraceLogger.print("cancel");
 				break;
 				
 			// add new record from ADEdit_Flow
 			case 1:
-				FP.p("return OK");
+				TraceLogger.print("return OK");
 				Bundle b = data.getExtras();
 				
 				String temptime = b.getString("time");
@@ -633,7 +634,7 @@ public class All_List extends Activity {
 					map2.put("str2",al.get(i).money);
 					map2.put("str3",al.get(i).remark);
 
-					FP.p("" + i);
+					TraceLogger.print("" + i);
 
 					list.add(map2);
 				}
@@ -672,13 +673,13 @@ public class All_List extends Activity {
 			switch(resultCode){
 			//cancel
 			case 0:
-				FP.p("in 0");
+				TraceLogger.print("in 0");
 				break;
 			
 			// edit old record from ADEdit_Flow2
 			case 1:
 				
-				FP.p("in 1");
+				TraceLogger.print("in 1");
 				
 				Bundle b2 = data.getExtras();
 				int tempalnum2 = b2.getInt("alnum");
@@ -714,7 +715,7 @@ public class All_List extends Activity {
 					map2.put("str2",al.get(i).money);
 					map2.put("str3",al.get(i).remark);
 
-					FP.p("" + i);
+					TraceLogger.print("" + i);
 
 					list.add(map2);
 				}
@@ -731,7 +732,7 @@ public class All_List extends Activity {
 				
 				// delete record
 			case 2:
-				FP.p("in 2");
+				TraceLogger.print("in 2");
 				Bundle b3 = data.getExtras();
 				int tempalnum3 = b3.getInt("alnum");
 				
@@ -763,7 +764,7 @@ public class All_List extends Activity {
 					map2.put("str2",al.get(i).money);
 					map2.put("str3",al.get(i).remark);
 
-					FP.p("" + i);
+					TraceLogger.print("" + i);
 
 					list.add(map2);
 				}
@@ -784,7 +785,7 @@ public class All_List extends Activity {
 			switch(resultCode){
 			
 			case 0:
-				FP.p("get it");
+				TraceLogger.print("get it");
 				callNowalcount(0);
 				break;
 				
@@ -801,7 +802,7 @@ public class All_List extends Activity {
 			
 			//no lock 
 			case 0:
-				FP.p("get it");
+				TraceLogger.print("get it");
 				break;
 			//lock 
 			case 1:
@@ -817,10 +818,10 @@ public class All_List extends Activity {
 		for(int i=0; i<al.size(); i++){
 			int tempi2 = Integer.parseInt(al.get(i).money);
 			tempi = tempi2+tempi;
-			FP.p("tempi: "+tempi);
+			TraceLogger.print("tempi: "+tempi);
 		}
 		String temps = String.valueOf(tempi);
-		FP.p("temps: "+temps);
+		TraceLogger.print("temps: "+temps);
 		
 		return temps;
 	}
@@ -829,7 +830,7 @@ public class All_List extends Activity {
 		int tempi =al.size();
 		
 		String temps = String.valueOf(tempi);
-		FP.p("temps: "+temps);
+		TraceLogger.print("temps: "+temps);
 		
 		return temps;
 	}
@@ -942,7 +943,7 @@ public class All_List extends Activity {
 					map2.put("str2",al.get(i).money);
 					map2.put("str3",al.get(i).remark);
 
-					FP.p("" + i);
+					TraceLogger.print("" + i);
 
 					list.add(map2);
 				}
@@ -1041,7 +1042,7 @@ public class All_List extends Activity {
 			map2.put("str2", al.get(i).money);
 			map2.put("str3", al.get(i).remark);
 
-			FP.p("" + i);
+			TraceLogger.print("" + i);
 
 			list.add(map2);
 		}
@@ -1119,7 +1120,7 @@ public class All_List extends Activity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
-				FP.p("which:"+which);
+				TraceLogger.print("which:"+which);
 				switch(which){
 				
 				case 0:
@@ -1174,7 +1175,7 @@ public class All_List extends Activity {
 										map2.put("str2",al.get(i).money);
 										map2.put("str3",al.get(i).remark);
 
-										FP.p("" + i);
+										TraceLogger.print("" + i);
 
 										list.add(map2);
 									}

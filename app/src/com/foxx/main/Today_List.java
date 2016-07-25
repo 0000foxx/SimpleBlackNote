@@ -5,7 +5,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-import FoXxLib.FP;
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.AnimatorSet;
@@ -36,6 +35,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import com.simpleblacklight.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 @TargetApi(11)
@@ -58,7 +59,7 @@ public class Today_List extends Activity{
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		
-		FP.p("in today_list onCreate start");
+		TraceLogger.print("in today_list onCreate start");
 		
 		setContentView(R.layout.todaylist);
 		
@@ -70,23 +71,23 @@ public class Today_List extends Activity{
 		
 		callNowalcount();
 		
-		FP.p("in today_list onCreate end");
+		TraceLogger.print("in today_list onCreate end");
 	}
 	
 	//switch tabwidget will call this
 	public void onResume(){
 		super.onResume();
-		FP.p("on onResume");
+		TraceLogger.print("on onResume");
 		initXml();
 		
 		if(!al.isEmpty()){
-			FP.p("!al.isEmpty()");
+			TraceLogger.print("!al.isEmpty()");
 			al.clear();
 			list.clear();
 			lv = null;
 			sa = null;
 //			al.removeAll(al);
-			FP.p("13"+al.size());
+			TraceLogger.print("13"+al.size());
 		}
 		
 		loadAccountDetail();
@@ -303,7 +304,7 @@ public class Today_List extends Activity{
 		// get accountdetail count
 		accountdetailcount = sp.getInt("adcount", 0);
 		
-		FP.p("in today: "+accountdetailcount);
+		TraceLogger.print("in today: "+accountdetailcount);
 		
 		// get today date
 		Calendar cal = Calendar.getInstance();
@@ -336,7 +337,7 @@ public class Today_List extends Activity{
 			map.put("str2",al.get(i).money);
 			map.put("str3",al.get(i).remark);
 
-			FP.p("" + i);
+			TraceLogger.print("" + i);
 
 			list.add(map);
 			
@@ -357,7 +358,7 @@ public class Today_List extends Activity{
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				// TODO Auto-generated method stub
-				FP.p("long "+arg2);
+				TraceLogger.print("long "+arg2);
 				
 				return false;
 			}
@@ -370,7 +371,7 @@ public class Today_List extends Activity{
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				FP.p(""+arg2);
+				TraceLogger.print(""+arg2);
 				
 				
 			}
@@ -412,10 +413,10 @@ public class Today_List extends Activity{
 		for(int i=0; i<al.size(); i++){
 			int tempi2 = Integer.parseInt(al.get(i).money);
 			tempi = tempi2+tempi;
-			FP.p("tempi: "+tempi);
+			TraceLogger.print("tempi: "+tempi);
 		}
 		String temps = String.valueOf(tempi);
-		FP.p("temps: "+temps);
+		TraceLogger.print("temps: "+temps);
 		
 		return temps;
 	}
@@ -424,7 +425,7 @@ public class Today_List extends Activity{
 		int tempi =al.size();
 		
 		String temps = String.valueOf(tempi);
-		FP.p("temps: "+temps);
+		TraceLogger.print("temps: "+temps);
 		
 		return temps;
 	}

@@ -1,6 +1,5 @@
 package com.foxx.main;
 
-import FoXxLib.FP;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -11,6 +10,8 @@ import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import com.simpleblacklight.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 public class GetDisplaySize extends Activity {
@@ -45,7 +46,7 @@ public class GetDisplaySize extends Activity {
 	public boolean onTouchEvent(MotionEvent event) {
 		// TODO Auto-generated method stub
 		
-		FP.p("Touch OK");
+		TraceLogger.print("Touch OK");
 		
 		Intent inte = this.getIntent();
 		

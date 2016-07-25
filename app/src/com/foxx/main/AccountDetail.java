@@ -1,9 +1,9 @@
 package com.foxx.main;
 
+import com.simpleblacklight.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
-import java.util.Comparator;
 
-import FoXxLib.FP;
+import java.util.Comparator;
 
 public class AccountDetail 
 //implements Comparable<Object>

@@ -2,7 +2,6 @@ package com.foxx.main;
 
 import java.util.Calendar;
 
-import FoXxLib.FP;
 import android.R.string;
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -18,6 +17,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.simpleblacklight.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 public class ADEdit_Flow extends Activity{
@@ -95,7 +96,7 @@ public class ADEdit_Flow extends Activity{
 							int dayOfMonth) {
 						// TODO Auto-generated method stub
 						etTime.setText(""+year+"/"+(monthOfYear+1)+"/"+dayOfMonth);
-						FP.p("touch");
+						TraceLogger.print("touch");
 					}
 				}, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE)).show();
 			}
@@ -219,7 +220,7 @@ public class ADEdit_Flow extends Activity{
 	public boolean onTouchEvent(MotionEvent event) {
 		// TODO Auto-generated method stub
 		
-		FP.p("Touch OK");
+		TraceLogger.print("Touch OK");
 		
 		return super.onTouchEvent(event);
 	}

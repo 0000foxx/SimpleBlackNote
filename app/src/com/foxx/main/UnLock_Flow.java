@@ -1,6 +1,5 @@
 package com.foxx.main;
 
-import FoXxLib.FP;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -14,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.simpleblacklight.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 @SuppressLint("NewApi")
@@ -137,8 +138,8 @@ public class UnLock_Flow extends Activity{
 	
 	public boolean onKeyDown(int keycode, KeyEvent event){
 		
-		FP.p("keycode:"+keycode);
-		FP.p("event:"+event.getAction());
+		TraceLogger.print("keycode:"+keycode);
+		TraceLogger.print("event:"+event.getAction());
 		
 		finishEdit(1);
 		
