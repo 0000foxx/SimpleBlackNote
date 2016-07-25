@@ -1,6 +1,6 @@
 package com.foxx.main;
 
-import java.io.File;
+ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,7 +11,6 @@ import java.util.Iterator;
 import java.util.Random;
 
 import FoXxLib.FP;
-import FoXxLib.F_UseString;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
