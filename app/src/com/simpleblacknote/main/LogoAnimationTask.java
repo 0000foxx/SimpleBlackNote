@@ -1,4 +1,4 @@
-package com.foxx.main;
+package com.simpleblacknote.main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 
-import com.foxx.main.LogoFlow.AnimationType;
+import com.simpleblacknote.main.LogoFlow.AnimationType;
 
 @SuppressLint("NewApi")
 public class LogoAnimationTask extends AsyncTask<Void, Void, Void>

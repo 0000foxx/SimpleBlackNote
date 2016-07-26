@@ -1,6 +1,6 @@
-package com.foxx.main;
+package com.simpleblacknote.main;
 
-import com.simpleblacklight.utility.TraceLogger;
+import com.simpleblacknote.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 import java.util.Comparator;

@@ -1,5 +1,5 @@
 
-package com.simpleblacklight.utility;
+package com.simpleblacknote.utility;
 
 import android.util.Log;
 
