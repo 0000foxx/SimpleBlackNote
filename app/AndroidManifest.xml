@@ -23,7 +23,7 @@
         </activity>
         
         <activity
-            android:name="com.simpleblacknote.main.LogoFlow"
+            android:name="com.simpleblacknote.main.LogoActivity"
             android:label="@string/title_activity_main" 
 			android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen"
             android:screenOrientation="portrait">

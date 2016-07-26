@@ -12,15 +12,15 @@ import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 
-import com.simpleblacknote.main.LogoFlow.AnimationType;
+import com.simpleblacknote.main.LogoActivity.AnimationType;
 
 @SuppressLint("NewApi")
 public class LogoAnimationTask extends AsyncTask<Void, Void, Void>
 {
 
-    private ILogoFlow mLogoFlow;
+    private ILogo mLogoFlow;
 
-    public LogoAnimationTask(ILogoFlow logoFlow){
+    public LogoAnimationTask(ILogo logoFlow){
         mLogoFlow = logoFlow;
     }
     
