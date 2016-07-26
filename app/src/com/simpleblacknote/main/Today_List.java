@@ -249,7 +249,7 @@ public class Today_List extends Activity{
 								
 								// �I�sAll_List �� �W�[��O����								
 								Intent inte = new Intent();
-								inte.setClass(Today_List.this, Table_Flow.class);
+								inte.setClass(Today_List.this, MainTableActivity.class);
 								
 								startActivity(inte);
 								Today_List.this.finish();

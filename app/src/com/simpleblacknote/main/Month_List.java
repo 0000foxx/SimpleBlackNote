@@ -246,7 +246,7 @@ public class Month_List extends Activity{
 								
 								// �I�sAll_List �� �W�[��O����								
 								Intent inte = new Intent();
-								inte.setClass(Month_List.this, Table_Flow.class);
+								inte.setClass(Month_List.this, MainTableActivity.class);
 								
 								startActivity(inte);
 								Month_List.this.finish();

@@ -246,7 +246,7 @@ public class Week_List extends Activity{
 								
 								// �I�sAll_List �� �W�[��O����								
 								Intent inte = new Intent();
-								inte.setClass(Week_List.this, Table_Flow.class);
+								inte.setClass(Week_List.this, MainTableActivity.class);
 								
 								startActivity(inte);
 								Week_List.this.finish();

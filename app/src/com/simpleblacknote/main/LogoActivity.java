@@ -47,7 +47,7 @@ public class LogoActivity extends Activity implements ILogo
     {
         LogoActivity.this.finish();
         Intent goAct = new Intent();
-        goAct.setClass(LogoActivity.this, Table_Flow.class);
+        goAct.setClass(LogoActivity.this, MainTableActivity.class);
         startActivity(goAct);
         overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
         System.exit(0);

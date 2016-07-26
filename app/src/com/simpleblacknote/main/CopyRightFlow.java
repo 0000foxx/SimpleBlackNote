@@ -175,7 +175,7 @@ public class CopyRightFlow extends Activity{
 	void addAdmob() {
 
 		 adView = new AdView(this, AdSize.BANNER, "a150189a3abeb1a");//xxxxxxxxxxxxxxx is your admob id	
-		 LinearLayout layout = (LinearLayout) findViewById(R.id.AdLayout);
+		 LinearLayout layout = (LinearLayout) findViewById(R.id.maintable_lt_admob);
 		 layout.addView(adView);
 		 adView.loadAd(new AdRequest());
 
