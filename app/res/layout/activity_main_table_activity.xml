@@ -5,7 +5,7 @@
     android:layout_height="fill_parent" >
 
     <LinearLayout
-        android:id="@+id/LinearLayout01"
+        android:id="@+id/maintable_ll_main"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
@@ -13,9 +13,10 @@
         <!-- Admob add here -->
 
         <LinearLayout
-            android:id="@+id/AdLayout"
+            android:id="@+id/maintable_lt_admob"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
         </LinearLayout>
 
         <TabWidget
@@ -27,19 +28,19 @@
         <!-- framelayout put here will be buttom -->
 
         <RadioGroup
-            android:id="@+id/tab_group"
+            android:id="@+id/maintable_rg_tables"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:layout_gravity="bottom"
             android:background="@drawable/background1"
-            android:checkedButton="@+id/tab1"
+            android:checkedButton="@+id/maintable_rb_consume_list"
             android:gravity="center_vertical"
             android:orientation="horizontal" >
 
-<!-- 			button set null that will remove default radio button -->
+            <!-- button set null that will remove default radio button -->
 
             <RadioButton
-                android:id="@id/tab1"
+                android:id="@id/maintable_rb_consume_list"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_marginTop="1.0dip"
@@ -48,10 +49,10 @@
                 android:button="@null"
                 android:gravity="center"
                 android:tag="tab1"
-                android:text="消費清單" />
+                android:text="@string/maintable_consume_list" />
 
             <RadioButton
-                android:id="@+id/tab2"
+                android:id="@+id/maintable_rb_today_consume"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_marginTop="1.0dip"
@@ -59,10 +60,10 @@
                 android:background="@drawable/tab_bg_selector"
                 android:button="@null"
                 android:gravity="center"
-                android:text="本日消費" />
+                android:text="@string/maintable_today_consume" />
 
             <RadioButton
-                android:id="@+id/tab3"
+                android:id="@+id/maintable_rb_week_consume"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_marginTop="1.0dip"
@@ -70,10 +71,10 @@
                 android:background="@drawable/tab_bg_selector"
                 android:button="@null"
                 android:gravity="center"
-                android:text="本周消費" />
+                android:text="@string/maintable_week_consume" />
 
             <RadioButton
-                android:id="@+id/tab4"
+                android:id="@+id/maintable_rb_month_consume"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_marginTop="1.0dip"
@@ -81,16 +82,16 @@
                 android:background="@drawable/tab_bg_selector"
                 android:button="@null"
                 android:gravity="center"
-                android:text="本月消費" />
+                android:text="@string/maintable_month_consume" />
         </RadioGroup>
 
         <!-- framelayout put here will be Top -->
+
         <FrameLayout
             android:id="@android:id/tabcontent"
             android:layout_width="fill_parent"
             android:layout_height="0.0dip"
             android:layout_weight="1.0" />
-        
     </LinearLayout>
 
 </TabHost>

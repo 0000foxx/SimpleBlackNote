@@ -16,6 +16,9 @@
     <string name="add_record">加入消費項目</string>
     <string name="exit">離開</string>
     
+    
+
+    
     <array name="moremenu">
         <item> 顯示消費統計  </item>
         <item> 依照消費金額排序  </item>
@@ -24,5 +27,10 @@
         <item> 加入密碼鎖  </item>
         <item> 取消密碼鎖  </item>
     </array>
+        <string name="maintable_month_consume">本月消費</string>
+        <string name="maintable_week_consume">本周消費</string>
+        <string name="maintable_today_consume">本日消費</string>
+        <string name="maintable_consume_list">消費清單</string>
+        
     
 </resources>
