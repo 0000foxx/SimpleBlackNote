@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import com.tlyerfoxx.sbcnote.R;
 
 @SuppressLint("NewApi")
-public class LogoFlow extends Activity implements ILogoFlow
+public class LogoActivity extends Activity implements ILogo
 {
     private ImageView mLogo;
     private LogoAnimationTask mLogoAnimationtask;
@@ -45,9 +45,9 @@ public class LogoFlow extends Activity implements ILogoFlow
     @Override
     public void finishLogo()
     {
-        LogoFlow.this.finish();
+        LogoActivity.this.finish();
         Intent goAct = new Intent();
-        goAct.setClass(LogoFlow.this, Table_Flow.class);
+        goAct.setClass(LogoActivity.this, Table_Flow.class);
         startActivity(goAct);
         overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
         System.exit(0);
