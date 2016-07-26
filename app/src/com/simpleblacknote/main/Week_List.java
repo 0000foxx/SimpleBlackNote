@@ -1,4 +1,4 @@
-package com.foxx.main;
+package com.simpleblacknote.main;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,12 +38,12 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-import com.simpleblacklight.utility.TraceLogger;
+import com.simpleblacknote.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 
 @TargetApi(11)
-public class Month_List extends Activity{
+public class Week_List extends Activity{
 	
 	Button bexit; // exit button
 	Button benter; // exit button
@@ -62,9 +62,9 @@ public class Month_List extends Activity{
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		
-		TraceLogger.print("in month_list onCreate start");
+		TraceLogger.print("in today_list onCreate start");
 		
-		setContentView(R.layout.monthlist);
+		setContentView(R.layout.weeklist);
 		
 		initXml();
 		
@@ -74,7 +74,7 @@ public class Month_List extends Activity{
 		
 		callNowalcount();
 		
-		TraceLogger.print("in month_list onCreate end");
+		TraceLogger.print("in today_list onCreate end");
 	}
 	
 	//switch tabwidget will call this
@@ -138,7 +138,7 @@ public class Month_List extends Activity{
 						// TODO Auto-generated method stub
 						
 //						// exit AlertDialog
-						AlertDialog ad = new AlertDialog.Builder(Month_List.this,AlertDialog.THEME_TRADITIONAL).create();
+						AlertDialog ad = new AlertDialog.Builder(Week_List.this,AlertDialog.THEME_TRADITIONAL).create();
 						ad.setTitle("ĵ�i");//�]�wĵ�i���D
 						ad.setMessage("�T�w���}??");//�]�wĵ�i���e
 						ad.setButton("�T�w", new DialogInterface.OnClickListener() {//�]�w���s1
@@ -170,7 +170,7 @@ public class Month_List extends Activity{
 									}
 								}
 								
-								Month_List.this.finish(); // exit program
+								Week_List.this.finish(); // exit program
 								
 							}
 						});
@@ -246,10 +246,10 @@ public class Month_List extends Activity{
 								
 								// �I�sAll_List �� �W�[��O����								
 								Intent inte = new Intent();
-								inte.setClass(Month_List.this, Table_Flow.class);
+								inte.setClass(Week_List.this, Table_Flow.class);
 								
 								startActivity(inte);
-								Month_List.this.finish();
+								Week_List.this.finish();
 								overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 								
 							}
@@ -307,8 +307,26 @@ public class Month_List extends Activity{
 		Calendar cal = Calendar.getInstance();
 		String dateStr = ""+cal.get(Calendar.YEAR) //2012
 		+"/"+(cal.get(Calendar.MONTH)+1) //11 (add 1 because it start from 0)
-		;// -> 2012/11
+		+"/"+cal.get(Calendar.DATE);//13
 		
+		//Calculate first date of this week
+		Calendar c = new GregorianCalendar();
+		c.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
+		Date d = c.getTime();
+		
+		//first date of this week
+		Date firstday = getFirstDayOfWeek(d);
+		
+		//first,second,third... date of this week
+		Date[] tempd = new Date[7];
+		//change to string for compare to store date
+		String[] datestr = new String[7];
+		for(int i=0; i<tempd.length; i++){
+			
+			tempd[i] = new Date(firstday.getTime()+1000*60*60*24*i);
+			datestr[i] = ""+(tempd[i].getYear()+1900)+"/"+(tempd[i].getMonth()+1)+"/"+tempd[i].getDate();
+			TraceLogger.print(""+datestr[i]);
+		}
 		
 		// get accountdetail field
 		for(int i=0; i<accountdetailcount; i++){
@@ -317,12 +335,15 @@ public class Month_List extends Activity{
 			sp.getString("ad_money"+i, ""); // ad_money0 = accountdetail0's money
 			sp.getString("ad_remark"+i, "");// ad_detail0 = accountdetail0's detail
 			
-			if(tempstr.contains(dateStr)){
+			//compare to store date
+			for(int i2=0; i2<datestr.length ; i2++){
 				
-				al.add(new AccountDetail(sp.getString("ad_time"+i, ""),sp.getString("ad_money"+i, ""),sp.getString("ad_remark"+i, "")));
+				if(tempstr.equals(datestr[i2])){
+					
+					al.add(new AccountDetail(sp.getString("ad_time"+i, ""),sp.getString("ad_money"+i, ""),sp.getString("ad_remark"+i, "")));
+				}
 				
 			}
-			
 			
 //			FP.p("in today"+al.get(i).time);
 		}
@@ -453,8 +474,8 @@ public class Month_List extends Activity{
 //        ad.show();
         
 		// use Toast
-        Toast.makeText(Month_List.this, "����Ҧ���O��X�� "+getalmoney()+" ��\n" +
-				"�����O�����`�Ƭ� "+getalcount()+" ��",Toast.LENGTH_SHORT).show();
+        Toast.makeText(Week_List.this, "���P�Ҧ���O��X�� "+getalmoney()+" ��\n" +
+				"���P��O�����`�Ƭ� "+getalcount()+" ��",Toast.LENGTH_SHORT).show();
         
         
 	}

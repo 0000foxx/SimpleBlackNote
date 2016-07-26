@@ -1,4 +1,4 @@
-package com.foxx.main;
+package com.simpleblacknote.main;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.simpleblacklight.utility.TraceLogger;
+import com.simpleblacknote.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 public class GetDisplaySize extends Activity {

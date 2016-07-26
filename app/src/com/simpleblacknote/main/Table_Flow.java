@@ -1,4 +1,4 @@
-package com.foxx.main;
+package com.simpleblacknote.main;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import android.widget.TabHost;
 import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
-import com.simpleblacklight.utility.TraceLogger;
+import com.simpleblacknote.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 @SuppressWarnings("deprecation")

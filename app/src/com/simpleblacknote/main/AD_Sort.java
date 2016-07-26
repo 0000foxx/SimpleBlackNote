@@ -1,4 +1,4 @@
-package com.foxx.main;
+package com.simpleblacknote.main;
 
 import com.tlyerfoxx.sbcnote.R;
 import java.util.Comparator;

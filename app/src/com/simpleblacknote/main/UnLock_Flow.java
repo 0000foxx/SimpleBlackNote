@@ -1,4 +1,4 @@
-package com.foxx.main;
+package com.simpleblacknote.main;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.simpleblacklight.utility.TraceLogger;
+import com.simpleblacknote.utility.TraceLogger;
 import com.tlyerfoxx.sbcnote.R;
 
 @SuppressLint("NewApi")

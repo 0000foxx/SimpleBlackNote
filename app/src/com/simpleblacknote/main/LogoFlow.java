@@ -1,5 +1,5 @@
 
-package com.foxx.main;
+package com.simpleblacknote.main;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

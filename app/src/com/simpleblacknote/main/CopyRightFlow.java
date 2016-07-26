@@ -1,4 +1,4 @@
-package com.foxx.main;
+package com.simpleblacknote.main;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
